@@ -7,8 +7,6 @@ __pycache__/
 .venv
 
 # Data artifacts
-train.csv
-test.csv
 submission.csv
 submission_lightgbm.csv
 lightgbm_model.pkl
