@@ -1,0 +1,18 @@
+# Python / VS Code
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.env
+.venv
+
+# Data artifacts
+train.csv
+test.csv
+submission.csv
+submission_lightgbm.csv
+lightgbm_model.pkl
+
+# OS noise
+.DS_Store
+Thumbs.db
