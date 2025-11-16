@@ -31,6 +31,22 @@ House Price Prediction/
 5. **Submission Generation** – automatic Kaggle submission creation to prove competition-readiness.
 6. **Interactive Widget UI** – in-notebook ipywidgets form so recruiters can play with predictions without external dependencies.
 
+## Key Visual Insights from EDA
+Exploratory Data Analysis ensured data integrity, guided transformations, and helped identify the most predictive structural and quality-related features.
+
+![SalePrice Distribution](Visualizations/SalePrice.png)
+
+*The target variable is right-skewed, which motivates the use of a log-transform (SalePriceLog) to stabilize variance and improve model learning.*
+
+![OverallQual](Visualizations/OverallQual.png)
+![GrLivArea](Visualizations/GrLivArea.png)
+![TotalSF](Visualizations/TotalSF.png)
+![GarageCars](Visualizations/GarageCars.png)
+![YearBuilt](Visualizations/YearBuilt.png)
+![HouseAge](Visualizations/HouseAge.png)
+
+*These plots highlight scale differences, skewness, and key structural relationships across influential predictors.*
+
 ## Requirements
 Because this project targets the Colab kernel exposed through the VS Code extension, **datasets must be imported from Google Drive** using the shared links embedded in the notebook. Everything else relies on standard Colab packages:
 
@@ -62,20 +78,9 @@ Because this project targets the Colab kernel exposed through the VS Code extens
 
 These metrics sit comfortably within top-quartile Kaggle submissions without ensembling.
 
-## Talking Points for Interviews
-- Discuss how engineered features capture nonlinear relationships absent from raw columns.
-- Explain why MAE and RMSLE were chosen (penalize under-predictions and scale with price magnitude).
-- Highlight reproducibility decisions: fixed random seeds, persisted model artifacts, portable data ingestion.
-- Mention the widget UI as proof of stakeholder empathy—non-technical teammates can explore predictions without touching code.
-
 ## Roadmap / Stretch Goals
 1. Add SHAP-based interpretability plots to quantify feature contributions per prediction.
 2. Experiment with stacking (e.g., CatBoost + LightGBM) for further leaderboard gains.
 3. Containerize the inference service (FastAPI + Docker) for deployment discussions.
 4. Automate Drive syncing via Google Drive API + service accounts.
 
-## Extra Notebook Cells
-No additional cells were necessary beyond the existing ipywidgets interface. If you want to extend functionality (e.g., SHAP plots or FastAPI export), add new cells after the LightGBM section and document them similarly.
-
----
-Feel free to reference this project during interviews—it demonstrates data acquisition, feature engineering, modeling, evaluation, and lightweight productization, which are the exact skills hiring managers look for in early-career Data Science and AI/ML roles.
